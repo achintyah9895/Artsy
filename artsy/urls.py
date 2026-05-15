@@ -4,11 +4,10 @@ from .views import *
 
 
 router = DefaultRouter()
-router.register(r'my-art',UserArtViewSet,basename='my-art')
+router.register(r'my-art',ArtsyViewSet,basename='my-art')
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('artsy/',ArtsyView.as_view(), name='artsy'),
     path("register/", RegisterView.as_view(), name="register"),
     path("login/", LoginView.as_view(), name="login"),
     path("logout/", LogoutView.as_view(), name="logout"),

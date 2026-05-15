@@ -10,7 +10,7 @@ class ArtSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Art
-        fields = ['id', 'user', 'user_name', 'item_name','item_description', 'image', 'price','category']
+        fields = ['id', 'user_name', 'item_name','item_description', 'image', 'price','category']
 
 
 
@@ -35,7 +35,7 @@ class BidSerializer(serializers.ModelSerializer):
     bidder_name = serializers.ReadOnlyField(source='bidder.username')
     class Meta:
         model = Bid
-        fields = ['id', 'art', 'bidder', 'bidder_name', 'bid_amount', 'timestamp']
+        fields = ['id', 'art', 'bidder_name', 'bid_amount', 'timestamp']
 
     def validate(self, data):
         art = data['art']
