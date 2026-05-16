@@ -4,7 +4,7 @@ from .views import *
 
 
 router = DefaultRouter()
-router.register(r'my-art',ArtsyViewSet,basename='my-art')
+router.register(r'art',ArtsyViewSet,basename='art')
 
 urlpatterns = [
     path('', include(router.urls)),
